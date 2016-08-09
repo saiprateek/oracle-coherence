@@ -1,0 +1,41 @@
+Caches are hosted on a Coherence cluster. At run time, any JVM process that is running Coherence automatically joins the cluster and 
+can access the caches and other services provided by the cluster. 
+
+When a JVM joins the cluster, it is called a cluster node, or alternatively, a cluster member. 
+For the sample applications in this chapter, two separate Java processes form the cluster: a cache server process and 
+the Hello World application process. For simplicity, the two processes are collocated on a single machine. 
+The cache server, by default, is configured to store cache data.
+
+
+
+Steps to create a hello world application using Oracle coherence :
+
+Step 1:  Create a maven web application . We need two configuration files to configure the coherence
+
+i) example-config.xml  : To access the distributed coherence cache service.
+
+ii) tangosol-coherence-override.xml : To configure the distribute coherence cache service on cluster. As I have earlier mentioned that coherence  cache mount on coherence cluster, So we need an address and port on system to run cache service.
+
+ 
+
+Step 2:   Download and put coherence.jar in lib/ classpath
+
+ 
+
+Step 3: Create example-config.xml in WEB-INF folder
+
+Step 4:  Create tangosol-coherence-override.xml 
+
+Step 5: Start your cache server by command : Open command prompt put command
+
+java -cp COHERENCE_HOME\lib\coherence.jar;COHERENCE_HOME\config com.tangosol.net.DefaultCacheServer
+
+Note: (put your coherence.jar accordingly in given folder like for me its in lib folder.
+Example: So i will go to cmd project location -
+C:\workspace\coherence-tests\src\java\main\webapp\WEB-INF\lib> java -cp coherence.jar;COHERENCE_HOME\config com.tangosol.net.DefaultCacheServer) 
+and server will be started.
+
+
+
+
+Happy learning.
